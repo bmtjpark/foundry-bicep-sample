@@ -102,6 +102,17 @@ module role 'core/security/role.bicep' = {
   }
 }
 
+// AI Project MSI에게 Storage Blob Data Contributor 역할 할당 (데이터 업로드 등 권한)
+module projectStorageRole 'core/security/role.bicep' = {
+  name: 'project-storage-role'
+  scope: rg
+  params: {
+    principalId: ai.outputs.projectPrincipalId
+    roleDefinitionId: 'ba92f5b4-2d11-453d-a403-e96b0029c9fe' // Storage Blob Data Contributor
+    principalType: 'ServicePrincipal'
+  }
+}
+
 output AZURE_KEY_VAULT_ENDPOINT string = '' // Placeholder if needed
 output AZURE_TENANT_ID string = tenant().tenantId
 output AZURE_RESOURCE_GROUP string = rg.name
