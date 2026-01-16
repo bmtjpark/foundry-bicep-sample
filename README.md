@@ -95,17 +95,6 @@
 2.  **클라이언트 연결**: Python 스크립트는 `DefaultAzureCredential`(로컬 CLI 로그인)과 Project 연결 문자열(Connection String)을 사용하여 인증합니다.
 3.  **추론 (Inference)**: 스크립트는 모델에 프롬프트를 보내고 응답을 출력합니다.
 
-## 문제 해결 (Troubleshooting)
-
-- **PermissionDenied (AuthorizationFailed)**
-    - 에이전트 생성 시 '권한 부족' 오류가 발생할 수 있습니다.
-    - `infra/main.bicep`에서 사용자에게 `Cognitive Services Contributor` 역할이 할당되도록 설정되어 있습니다.
-    - 역할 할당이 적용되는 데 **최대 5~10분**이 소요될 수 있습니다. 오류 발생 시 잠시 기다린 후 다시 시도하세요.
-
-- **azure-ai-projects SDK 오류**
-    - SDK 버전 업데이트로 인해 일부 메서드(`from_connection_string`, `inference`)가 변경되었습니다.
-    - 제공된 `chat_test.ipynb`는 최신 SDK (`2.0.0b2` 이상)에 맞춰 수정되었습니다.
-
 ## 정리 (Clean Up)
 
 모든 리소스를 삭제하고 비용 발생을 방지하려면 다음을 실행하세요:
