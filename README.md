@@ -65,7 +65,7 @@
     # 가상 환경 활성화 (Windows)
     .\.venv\Scripts\Activate.ps1
     
-    # (선택 사항) 필요한 패키지 설치 - 노트북 실행 시 자동 설치됨ㅊㅇ
+    # (선택 사항) 필요한 패키지 설치 - 노트북 실행 시 자동 설치됨
     pip install azure-ai-projects azure-identity python-dotenv ipykernel
     ```
 
